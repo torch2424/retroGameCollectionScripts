@@ -64,7 +64,8 @@ console.log(folderTwoFiles);
 var options = {
   shouldSort: true,
   includeScore: true,
-  threshold: 0.4,
+  tokenize: true,
+  threshold: 0.1,
   location: 0,
   distance: 100,
   maxPatternLength: 200,
@@ -86,6 +87,7 @@ folderOneFiles.forEach((fileObject) => {
   if(result.length &&
     fileObject.title.toUpperCase() !== result[0].item.title.toUpperCase()) {
     console.log(' ');
+    console.log(result.length);
     console.log(fileObject.title + ' --> ' + result[0].item.title);
     conversions.push({
       fileToConvert: folderOneArg + fileObject.title + folderOneExtArg,
